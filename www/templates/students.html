@@ -1,15 +1,13 @@
 <ion-view view-title="Students">
     <ion-content>
         <div class="list" ng-repeat="student in students">
-            <div class="item border-top">
-                {{student.first_name}}
-            </div>
+            <a href="#" class="item item-avatar item-icon-right">
+                <img ng-src="{{student.icon}}">
+                <h2>{{student.first_name}} {{student.last_name}}</h2>
+                <p>last paid: 1 Jan 2016</p>
+                <!--<i class="icon ion-chatbubble muted"></i>-->
+            </a>
+            <hr>
         </div>
-
-        <ion-list class="animate-ripple">
-            <ion-item ng-repeat="student in students">
-                {{student.first_name}}
-            </ion-item>
-        </ion-list>
     </ion-content>
 </ion-view>
