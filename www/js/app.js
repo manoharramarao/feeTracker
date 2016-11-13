@@ -19,9 +19,10 @@ app.run(function ($ionicPlatform) {
     });
 })
 
-app.config(function ($stateProvider, $urlRouterProvider) {
-    $stateProvider
+app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
+    $ionicConfigProvider.views.maxCache(0);
+    $stateProvider
     .state('app', {
         url: '/app',
         abstract: true,
@@ -43,9 +44,25 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             'menuContent': {
                 templateUrl: 'templates/students.html',
                 controller: 'StudentsController'
+            },
+            'fabContent': {
+                template: '<button ng-click="addStudent()" id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
+                controller: 'StudentsController'
             }
         }
     })
+    .state('app.addStudent', {
+        url: '/addStudent',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/add_student.html',
+                controller: 'AddStudentsController'
+            },
+            'fabContent': {
+                template: ''
+            }
+        }
+    });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/config');
 });

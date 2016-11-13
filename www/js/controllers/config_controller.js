@@ -16,7 +16,7 @@ $ionicHistory.nextViewOptions({
 		    db = window.sqlitePlugin.openDatabase({name: "fee_populated.db", location: 'default',
 		    createFromLocation: 1});
 		    console.log("right after successfully opening DB");
-		    $location.path("/students");
+		    $location.path("/app/students");
             $ionicLoading.hide();
 		}else{
 		    console.log("started creating websql");
@@ -31,13 +31,3 @@ $ionicHistory.nextViewOptions({
 	});
 
 });
-
-/*
-app.controller("ConfigController", function($scope, $ionicPlatform){
-    console.log("inside students controller");
-    $scope.students = [];
-    for (var i=0; i<4; i++){
-        $scope.students.push({id: i, first_name: 'Manohar ' + i});
-    }
-});
-*/

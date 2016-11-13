@@ -1,3 +1,16 @@
-<ion-view view-title="Config">
 
+<ion-view view-title="Config">
+    <ion-content>
+        <div class="list" ng-repeat="student in students">
+            <div class="item border-top">
+                {{student.first_name}}
+            </div>
+        </div>
+
+        <ion-list class="animate-ripple">
+            <ion-item ng-repeat="student in students">
+                {{student.first_name}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
 </ion-view>

@@ -1,7 +1,7 @@
 app.controller("ConfigController", function($scope, $ionicPlatform, $ionicLoading, $location, $ionicHistory){
 	console.log("inside ConfigController");
 
-	$ionicHistory.nextViewOptions({
+$ionicHistory.nextViewOptions({
 		disableAnimate: true,
 		disableBack: true
 	});
@@ -16,7 +16,7 @@ app.controller("ConfigController", function($scope, $ionicPlatform, $ionicLoadin
 		    db = window.sqlitePlugin.openDatabase({name: "fee_populated.db", location: 'default',
 		    createFromLocation: 1});
 		    console.log("right after successfully opening DB");
-		    $location.path("/students");
+		    $location.path("/app/students");
             $ionicLoading.hide();
 		}else{
 		    console.log("started creating websql");
@@ -29,4 +29,5 @@ app.controller("ConfigController", function($scope, $ionicPlatform, $ionicLoadin
 		    $ionicLoading.hide();
 		}
 	});
+
 });
