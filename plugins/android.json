@@ -24,6 +24,9 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.ionicframework.feetracker651389"
+        },
+        "cordova-sqlite-ext": {
+            "PACKAGE_NAME": "com.ionicframework.feetracker651389"
         }
     },
     "dependent_plugins": {}

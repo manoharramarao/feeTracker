@@ -28,7 +28,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         templateUrl: 'templates/menu.html',
         controller: 'AppCtrl'
     })
-
+    .state('app.config', {
+        url: '/config',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/config.html',
+                controller: 'ConfigController'
+            }
+        }
+    })
     .state('app.students', {
         url: '/students',
         views: {
@@ -39,5 +47,5 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         }
     })
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/students');
+    $urlRouterProvider.otherwise('/app/config');
 });
