@@ -40,6 +40,14 @@ module.exports = [
         "clobbers": [
             "SQLitePlugin"
         ]
+    },
+    {
+        "id": "cordova-plugin-dbcopy.sqlDB",
+        "file": "plugins/cordova-plugin-dbcopy/www/sqlDB.js",
+        "pluginId": "cordova-plugin-dbcopy",
+        "clobbers": [
+            "window.plugins.sqlDB"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -51,7 +59,8 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.2.0",
     "cordova-plugin-whitelist": "1.3.0",
     "ionic-plugin-keyboard": "2.2.1",
-    "cordova-sqlite-ext": "0.10.2"
+    "cordova-sqlite-ext": "0.10.2",
+    "cordova-plugin-dbcopy": "1.0.4"
 };
 // BOTTOM OF METADATA
 });
