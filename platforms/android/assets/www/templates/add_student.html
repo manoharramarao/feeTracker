@@ -1,13 +1,19 @@
 <ion-view view-title="Add Student">
     <ion-content>
         <div class="list">
-            <label class="item item-input">
+            <label class="padding item item-input item-stacked-label">
+                <span class="input-label">First Name</span>
                 <input type="text" placeholder="First Name" ng-model="student.firstname">
+                <hr>
             </label>
-            <label class="item item-input">
+
+            <label class="padding item item-input item-stacked-label">
+                <span class="input-label">Last Name</span>
                 <input type="text" placeholder="Last Name" ng-model="student.lastname">
+                <hr>
             </label>
-            <label class="item item-input item-select">
+
+            <label class="padding item item-input item-select">
                 <div class="input-label">
                     Gender
                 </div>
@@ -17,8 +23,8 @@
                 </select>
             </label>
         </div>
-        <button class="button button-block button-positive" ng-click="createStudent()">
-            Add student
-        </button>
+        <div class="padding">
+            <button class="button button-full button-assertive ink" ng-click="createStudent()">Add student</button>
+        </div>
     </ion-content>
 </ion-view>
