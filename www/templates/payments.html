@@ -1,0 +1,21 @@
+<ion-view view-title="Payments">
+    <ion-content>
+        <!--<div class="list" ng-repeat="i in [1,2,3,4,5]">
+            <a class="item" href="#">
+                1 Jan 2016
+                <span class="item-note">
+                    <em class="fa fa-inr" aria-hidden="true"></em>500
+                </span>
+            </a>
+        </div>-->
+        <!-- TODO: @Manohar - correct the sorting of date -->
+        <div class="list" ng-repeat="payment in payments | orderBy: 'payment.date'">
+            <a class="item" href="#">
+                {{payment.date | date:'dd MMM yyyy'}}
+                <span class="item-note">
+                    <em class="fa fa-inr" aria-hidden="true"></em>{{payment.amount}}
+                </span>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

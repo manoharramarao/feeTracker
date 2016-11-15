@@ -51,4 +51,9 @@ app.controller("StudentsController", function($scope, $ionicPlatform, $ionicLoad
         console.log("clicked on add student");
         $location.path("/app/addStudent");
     };
+
+    $scope.onClickStudent = function(studentId){
+        console.log("clicked on student id " + studentId);
+        $location.path("/app/payments");
+    };
 });

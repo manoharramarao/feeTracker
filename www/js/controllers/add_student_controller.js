@@ -1,4 +1,4 @@
-app.controller("AddStudentsController", function($scope, $ionicPlatform, $ionicLoading, $location){
+app.controller("AddStudentsController", function($scope, $ionicPlatform, $ionicLoading, $location, $filter){
 
     console.log("inside add AddStudentsController controller");
     $scope.student = {};
@@ -11,6 +11,7 @@ app.controller("AddStudentsController", function($scope, $ionicPlatform, $ionicL
         }, function(error){
             console.log("error adding student " + JSON.stringify(error));
         });*/
+        console.log("date is " + $scope.student.date);
         db.transaction(function(tx){
             tx.executeSql(query, [$scope.student.firstname, $scope.student.lastname, $scope.student.gender],
             function(tx, res){
@@ -27,4 +28,10 @@ app.controller("AddStudentsController", function($scope, $ionicPlatform, $ionicL
         // successfully. It was only navigating back when tried adding student twice
         $location.path("/app/students");
     };
+
+    /*$scope.formateDate = function(){
+        console.log("inside formateDate " + $scope.student.date);
+        $scope.student.date = $filter('date')($scope.student.date, "dd MMM yyyy");
+        console.log("after formating " + $scope.student.date);
+    }*/
 });

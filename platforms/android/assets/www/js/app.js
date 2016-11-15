@@ -62,6 +62,15 @@ app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
                 template: ''
             }
         }
+    })
+    .state('app.payments', {
+        url: '/payments',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/payments.html',
+                controller: 'PaymentsController'
+            }
+        }
     });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/config');
