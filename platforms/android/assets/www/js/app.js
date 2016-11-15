@@ -64,11 +64,26 @@ app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
         }
     })
     .state('app.payments', {
-        url: '/payments',
+        url: '/payments/:studentId',
         views: {
             'menuContent': {
                 templateUrl: 'templates/payments.html',
                 controller: 'PaymentsController'
+            },
+            'fabContent': {
+                template: '<button ng-click="addPayment()" id="fab-profile" class="button button-fab button-fab-bottom-right button-energized-900"><i class="icon ion-plus"></i></button>',
+                controller: 'PaymentsController'
+            }
+        }
+    })
+    .state('app.addPayment', {
+        url: '/addPayment/:studentId',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/add_payment.html'
+            },
+            'fabContent': {
+                templateUrl: ''
             }
         }
     });

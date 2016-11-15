@@ -1,0 +1,27 @@
+<ion-view view-title="Add Payment">
+    <ion-content>
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <div class="input-label">
+                    <h2>Date of payment</h2>
+                </div>
+                <input placeholder="YYYY-MM-DD" class="textbox-n" type="text" onblur="(this.type='text')"
+                       onfocus="(this.type='date')" ng-model="payment.date">
+                <!--<input type="date" ng-model="payment.date" placeholder="MM/DD/YYYY"/>-->
+            </label>
+            <label class="padding item item-input item-stacked-label">
+                <span class="input-label">Amount Paid</span>
+                <input type="number" placeholder="Amount" ng-model="payment.amount">
+                <hr>
+            </label>
+            <!--<label class="item item-input">
+                <div class="input-label">
+                    <p>{{student.date | date:'dd MMM yyyy'}}</p>
+                </div>
+            </label>-->
+        </div>
+        <div class="padding">
+            <button class="button button-full button-assertive ink" ng-click="createStudent()">Add payment</button>
+        </div>
+    </ion-content>
+</ion-view>
