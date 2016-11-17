@@ -80,7 +80,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
         url: '/addPayment/:studentId',
         views: {
             'menuContent': {
-                templateUrl: 'templates/add_payment.html'
+                templateUrl: 'templates/add_payment.html',
+                controller: 'AddPaymentController'
             },
             'fabContent': {
                 templateUrl: ''

@@ -4,7 +4,7 @@
             <a href="#" class="item item-avatar" ng-click="onClickStudent(student.id)">
                 <img ng-src="{{student.icon}}">
                 <h2>{{student.first_name}} {{student.last_name}}</h2>
-                <p>last paid: 1 Jan 2016</p>
+                <p>Last paid: {{student.last_updated | date:'dd MMM yyyy'}}</p>
                 <!--<i class="icon ion-chatbubble muted"></i>-->
             </a>
             <!--<hr>-->

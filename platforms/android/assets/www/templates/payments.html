@@ -9,7 +9,7 @@
             </a>
         </div>-->
         <!-- TODO: @Manohar - correct the sorting of date -->
-        <div class="list" ng-repeat="payment in payments | orderBy: 'payment.date'">
+        <div class="list" ng-repeat="payment in payments | orderBy: '-date'">
             <a class="item" href="#">
                 {{payment.date | date:'dd MMM yyyy'}}
                 <span class="item-note">

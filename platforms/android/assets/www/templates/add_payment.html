@@ -6,7 +6,12 @@
                     <h2>Date of payment</h2>
                 </div>
                 <input placeholder="YYYY-MM-DD" class="textbox-n" type="text" onblur="(this.type='text')"
-                       onfocus="(this.type='date')" ng-model="payment.date">
+                       onfocus="(this.type='date')" ng-model="payment.date" ng-hide="payment.date">
+                <div>
+                    <label class="textbox-n" type="text" ng-show="payment.date">
+                        {{payment.date | date:'dd MMM yyyy'}}
+                    </label>
+                </div>
                 <!--<input type="date" ng-model="payment.date" placeholder="MM/DD/YYYY"/>-->
             </label>
             <label class="padding item item-input item-stacked-label">
@@ -21,7 +26,7 @@
             </label>-->
         </div>
         <div class="padding">
-            <button class="button button-full button-assertive ink" ng-click="createStudent()">Add student</button>
+            <button class="button button-full button-assertive ink" ng-click="addPayment()">Add payment</button>
         </div>
     </ion-content>
 </ion-view>

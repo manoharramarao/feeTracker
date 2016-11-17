@@ -6,17 +6,19 @@ app.controller("StudentsController", function($scope, $ionicPlatform, $ionicLoad
         $ionicLoading.show({
             template: "Loading..."
         });
-        var query = "SELECT id, first_name, last_name, gender FROM students";
+        var query = "SELECT * FROM students";
         $cordovaSQLite.execute(db, query, []).then(function(res){
             if(res.rows.length > 0){
                 for(var i=0; i<res.rows.length; i++){
                     // TODO: @Manohar - Need to remove this if condition once you same profile pics
                     if(res.rows.item(i).gender === "Male"){
                         $scope.students.push({id: res.rows.item(i).id, first_name: res.rows.item(i).first_name,
-                            last_name: res.rows.item(i).last_name, gender: res.rows.item(i).gender, icon: 'img/male.png'});
+                            last_name: res.rows.item(i).last_name, gender: res.rows.item(i).gender, icon: 'img/male.png',
+                            last_updated: new Date(res.rows.item(i).last_updated)});
                     }else if(res.rows.item(i).gender === "Female"){
                         $scope.students.push({id: res.rows.item(i).id, first_name: res.rows.item(i).first_name,
-                            last_name: res.rows.item(i).last_name, gender: res.rows.item(i).gender, icon: 'img/female.png'});
+                            last_name: res.rows.item(i).last_name, gender: res.rows.item(i).gender, icon: 'img/female.png',
+                            last_updated: new Date(res.rows.item(i).last_updated)});
                     }
                 }
             };

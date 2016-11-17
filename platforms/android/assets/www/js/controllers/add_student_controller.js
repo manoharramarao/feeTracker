@@ -11,7 +11,7 @@ app.controller("AddStudentsController", function($scope, $ionicPlatform, $ionicL
         }, function(error){
             console.log("error adding student " + JSON.stringify(error));
         });*/
-        console.log("date is " + $scope.student.date);
+        /*console.log("date is " + $scope.student.date);*/
         db.transaction(function(tx){
             tx.executeSql(query, [$scope.student.firstname, $scope.student.lastname, $scope.student.gender],
             function(tx, res){
