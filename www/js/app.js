@@ -87,6 +87,18 @@ app.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
                 templateUrl: ''
             }
         }
+    })
+    .state('app.paymentsByDate', {
+        url: '/paymentsByDate',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/payments_by_date.html',
+                controller: 'PaymentsByDateController'
+            },
+            'fabContent': {
+                template: ''
+            }
+        }
     });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/app/config');

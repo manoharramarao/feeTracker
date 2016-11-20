@@ -28,7 +28,7 @@ app.controller("AddPaymentController", function($scope, $ionicPlatform, $ionicLo
             $location.path("/app/payments/"+studentId);
         }, function(error){
             console.log("error adding payment " + JSON.stringify(error));
-        })
-    }
+        });
+    };
 
 });
